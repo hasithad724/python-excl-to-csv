@@ -8,12 +8,14 @@ file_path='..//input.xlsx'
 workbook = load_workbook(file_path)
 sheet = workbook['Day2']
 sheet['A3'] = 'Sales'
-yellow_fill = PatternFill(start_color="FFFF00", end_color="FFFF00", fill_type="solid")
 
 # Apply color based on cell value in column A
+yellow_fill = PatternFill(start_color="FFFF00", end_color="FFFF00", fill_type="solid")
 for cell in sheet['A']:  # Replace 'A' with the column letter you want to format
     if cell.value == 'Sales':  # Condition to apply color
         cell.fill = yellow_fill
+
+# Save and closed the workbook
 workbook.save(file_path)
 workbook.close()
 
